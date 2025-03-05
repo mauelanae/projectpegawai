@@ -226,10 +226,8 @@
             if (files.length > 0) {
                 let file = files[0];
 
-                // Simpan file ke input hidden
                 $("#fotoUpload")[0].files = event.originalEvent.dataTransfer.files;
 
-                // Tampilkan nama file
                 $("#fileName").text(file.name).removeClass("hidden");
                 $("#removeFile").removeClass("hidden");
             }
@@ -249,14 +247,12 @@
             }
         });
 
-        // Hapus file yang diunggah
         $("#removeFile").on("click", function() {
-            $("#fotoUpload").val(""); // Kosongkan input file
-            $("#fileName").addClass("hidden").text(""); // Sembunyikan nama file
-            $("#removeFile").addClass("hidden"); // Sembunyikan tombol hapus
+            $("#fotoUpload").val("");
+            $("#fileName").addClass("hidden").text(""); 
+            $("#removeFile").addClass("hidden");
         });
 
-        // Konfirmasi sebelum hapus data
         $('.deletePegawai').on('click', function(e) {
             if (!confirm("Yakin ingin menghapus data ini?")) {
                 e.preventDefault();
